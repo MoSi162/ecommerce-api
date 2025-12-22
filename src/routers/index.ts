@@ -1,14 +1,14 @@
 import { Router } from "express";
-
-// inline minimal userRouter to avoid missing module error
-const userRouter = Router();
-userRouter.get("/", (req, res) => {
-  res.json({ message: "users root" });
-});
+import userRouter from "./userRouter";
+import categoryRouter from "./categoryRouter";
+import productRouter from "./productRouter";
+import orderRouter from "./orderRouter";
 
 const apiRouter = Router();
 
 apiRouter.use("/users", userRouter);
-// later: /products, /categories, /orders
+apiRouter.use("/categories", categoryRouter);
+apiRouter.use("/products", productRouter);
+apiRouter.use("/orders", orderRouter);
 
 export default apiRouter;
