@@ -1,2 +1,2 @@
-export * from "./users";
-// later: export * from "./products"; etc.
+export * from "./Users";
+export * from "./categories";

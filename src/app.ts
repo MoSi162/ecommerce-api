@@ -1,13 +1,9 @@
+import { connectDB } from "./db/index";
+import apiRouter from "./routers/index";
+import type { ApiError } from "./types";
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { connectDB } from "./db/index";
-import apiRouter from "#routers/index";
-type ApiError = {
-  statusCode?: number;
-  message?: string;
-  [key: string]: unknown;
-};
 
 dotenv.config();
 
